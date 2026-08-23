@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 import { Photo } from '../types/Photo';
 
 type PhotosContextType = {
@@ -13,10 +13,9 @@ export function PhotosProvider({ children }: { children: ReactNode }) {
     const [photos, setPhotos] = useState<Photo[]>([]);
 
     const addPhoto = (photo: Photo) => {
-        setPhotos([...photos, photo]);
-    };
+        setPhotos([...photos, ...prev]);
+    }
 
-}
 
 return (
     <PhotosContext.Provider value={{ photos, addPhoto }}>
