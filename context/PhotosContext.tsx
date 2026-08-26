@@ -13,8 +13,8 @@ export function PhotosProvider({ children }: { children: ReactNode }) {
     const [photos, setPhotos] = useState<Photo[]>([]);
 
     const addPhoto = (photo: Photo) => {
-        setPhotos([...photos, ...prev]);
-    }
+        setPhotos((prev) => [...prev, photo]);
+    };
 
 
 return (

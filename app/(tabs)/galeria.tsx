@@ -23,7 +23,8 @@ export default function GaleriaScreen() {
           <View style={styles.info}>
             <Text style={styles.description}>{item.description || 'Sin descripción'}</Text>
             <Text style={styles.coords}>
-              📍 {item.latitude.toFixed(5)}, {item.longitude.toFixed(5)} // Esto hace que se redondee las coordenadas a 5 decimales. 
+                
+              📍 {item.latitude ? item.latitude.toFixed(5) : 'Sin coordenadas'}, {item.longitude ? item.longitude.toFixed(5) : 'Sin coordenadas'} 
             </Text>
             <Text style={styles.date}>{item.takenAt}</Text>
           </View>

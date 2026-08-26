@@ -29,8 +29,8 @@ export default function CaptureScreen() {
     addPhoto({ 
       id: Date.now().toString(),
       uri: pendingUri, 
-      latitude: coords?.latitude ?? 0,
-      longitude: coords?.longitude ?? 0,
+      latitude: coords?.latitude ?? null,
+      longitude: coords?.longitude ?? null,
       description,
       takenAt: new Date().toLocaleString(),
     });
