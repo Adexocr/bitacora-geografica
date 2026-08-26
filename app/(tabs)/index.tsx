@@ -25,9 +25,9 @@ export default function CaptureScreen() {
   async function handleSave() {
     if (!pendingUri) return;
     const coords = await getCurrentCoordinates();
-
+// Se agrega la foto y se soluciona error por tomar fotos seguidas. Se le da un ID unico a cada toma
     addPhoto({ 
-      id: Date.now().toString(),
+      id: Date.now().toString() + Math.random().toString(36).substring(2, 9), 
       uri: pendingUri, 
       latitude: coords?.latitude ?? null,
       longitude: coords?.longitude ?? null,
